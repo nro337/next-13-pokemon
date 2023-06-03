@@ -1,6 +1,8 @@
-# next-template
+# Next.js 13 App Router with PokeAPI
 
 A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
+
+![Card](./public/readme-pic.png)
 
 ## Usage
 
