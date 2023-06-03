@@ -1,1 +1,21 @@
-export type BadgeType = "normal" | "ice" | "water" | "fire" | "flying" | undefined;
+export type BadgeType =
+  | "normal"
+  | "ice"
+  | "water"
+  | "fire"
+  | "flying"
+  | "grass"
+  | "electric"
+  | "ice"
+  | "fighting"
+  | "poison"
+  | "ground"
+  | "psychic"
+  | "bug"
+  | "rock"
+  | "ghost"
+  | "dark"
+  | "dragon"
+  | "steel"
+  | "fairy"
+  | undefined
