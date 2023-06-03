@@ -11,8 +11,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
+    twitter: "https://twitter.com/nickalico",
+    github: "https://github.com/nro337",
     docs: "https://ui.shadcn.com",
   },
 }

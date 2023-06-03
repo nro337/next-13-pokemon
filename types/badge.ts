@@ -1,0 +1,1 @@
+export type BadgeType = "normal" | "ice" | "water" | "fire" | "flying" | undefined;
