@@ -13,6 +13,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import ClientTooltip from "@/components/client/ClientMoveTooltip"
 
 async function getPokemon(name: string) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
@@ -62,7 +69,7 @@ export default async function Page(props: PageProps) {
         </Link>
       </div>
       <div className="mt-4 flex flex-col place-items-center items-center justify-center">
-        <Card className="w-[350px]">
+        <Card className="w-[450px]">
           <CardHeader>
             <CardTitle>{capitalName}</CardTitle>
             <CardDescription>ID: {data.id}</CardDescription>
@@ -74,6 +81,23 @@ export default async function Page(props: PageProps) {
               width={200}
               height={200}
             />
+            <div className="grid grid-cols-3 gap-x-3">
+              {data.moves.map((m: any) => (
+                <TooltipProvider delayDuration={100}>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <Link href={`${m.move.url}`}>
+                        {m.move.name.charAt(0).toUpperCase() +
+                          m.move.name.slice(1)}
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <ClientTooltip url={m.move.url} />
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              ))}
+            </div>
           </CardContent>
           <CardFooter>
             <div className="flex flex-row">
