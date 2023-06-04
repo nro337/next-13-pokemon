@@ -20,12 +20,14 @@ const ClientMoveTooltip = ({url}:{url:string}) => {
   return (
     <div>
       {loading && <PuffLoader color="blue" size={20} loading={true} />}
-      {list && <div>
+      {list && <div className="w-[400px]">
         <p>ID: {list.id}</p>
         <p>PP: {list.pp}</p>
+        {list.accuracy && <p>Accuracy: {list.accuracy}</p>}
+        <p>Type: {list.type.name.charAt(0).toUpperCase() + list.type.name.slice(1)}</p>
+        <p>{list.effect_entries[0].effect}</p>
         </div>
       }
-      {/* {!list && <div>No data :/</div>} */}
     </div>
   )
 }
